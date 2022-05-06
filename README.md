@@ -325,3 +325,39 @@ For additional support, check out these guides on Heroku:
 [postgres downloads page]: https://postgresapp.com/downloads.html
 [heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
 [troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+Project was created on May 6 2022 By: Wesley Bourke and Caleb Hamernick.
+
+This project uses a React front-end, and a Ruby on Rails back-end.
+
+To run the project if site is not hosted by Heroku:
+
+## Setup
+>>>>>>To download the dependencies for the frontend and backend, run:<<<<<<
+```sh
+bundle install
+npm install --prefix client
+```
+...................................................
+You can run your Rails API on [`localhost:3000`](http://localhost:3000) by
+running:
+
+```sh
+rails s
+```
+
+You can run your React app on [`localhost:4000`](http://localhost:4000) by
+running:
+
+```sh
+npm start --prefix client
+```
+.....................................................
+
