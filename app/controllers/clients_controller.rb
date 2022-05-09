@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
     end
 
     def show
-        render json: @client
+            render json: @client   
     end
 
     def create
