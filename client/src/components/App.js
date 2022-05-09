@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useCallback, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Login from './Login';
@@ -10,14 +10,15 @@ import AddProject from './AddProject';
 function App() {
 const [photoProjects, setPhotoProjects] = useState(
   {
-
+    key: 'wes'
   }
 )
-useEffect(() => fetch(`http://localhost/3000/projects`)
-.then( res => res.json())
-.then( data => console.log(data))
-.catch( error => console.log(error.message)
-),[])
+useEffect(() => {
+  fetch(`http://localhost:3000/projects`)
+  .then( res => res.json())
+  .then( data => console.log(data))
+  .catch( error => console.log(error.message)
+)},[])
 
 
   return (
