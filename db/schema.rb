@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_05_06_161029) do
 
   create_table "clients", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.string "title"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_05_06_161029) do
 
   create_table "photographers", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.string "first_name"
     t.string "last_name"

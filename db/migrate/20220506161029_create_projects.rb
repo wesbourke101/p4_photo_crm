@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration[6.1]
       t.string :status
       t.integer :client_id
       t.integer :photographer_id
-
+      
       t.timestamps
     end
   end
