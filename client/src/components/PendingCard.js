@@ -1,0 +1,16 @@
+import React from 'react'
+
+function PendingCard({pend}) {
+    const {id, client_id, description, due_date, moodboard, photographer_id, status, title} = pend
+
+  return (
+    <div>
+        {description}
+        {title}
+        {moodboard}
+        {status}
+    </div>
+  )
+}
+
+export default PendingCard
