@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :find_projects, only: [:show, :update, :destroy]
-    # setting up full crud so I can copy paste to all and iterate out later... 
-
+    
     def index
         render json: Project.all
     end
