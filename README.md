@@ -361,3 +361,12 @@ npm start --prefix client
 ```
 .....................................................
 
+
+
+################### Error from caleb:
+An error occurred while installing pg (1.3.5), and Bundler cannot continue.
+
+In Gemfile:
+  pg
+
+#################
