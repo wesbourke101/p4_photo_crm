@@ -1,5 +1,6 @@
 class PhotographersController < ApplicationController
     before_action :find_photographer, only: [:show, :update, :destroy]
+    skip_before_action :authorized, only: [:index, :create]
     # setting up full crud so I can copy paste to all and iterate out later... 
 
     def index
