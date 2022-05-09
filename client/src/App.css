@@ -1,0 +1,73 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+#divSignInForm { 
+    padding: 12px 20px;
+    height: 20rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }  
+
+  #clientNameCardDiv { 
+    padding: 12px 20px;
+    height: 10rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #pendingApprovalCardDiv { 
+    padding: 12px 20px;
+    height: 10rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #inProgressCardDiv { 
+    padding: 12px 20px;
+    height: 10rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #completedCardDiv { 
+    padding: 12px 20px;
+    height: 10rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
