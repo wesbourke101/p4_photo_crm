@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   def show
     client = Client.find(session[:user_id]) || Photographer.find(session[:user_id])
+        # byebug
         if client 
             render json: client
         else 

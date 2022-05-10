@@ -4,10 +4,10 @@ function InProgressCard({progress}) {
     const {id, client_id, description, due_date, moodboard, photographer_id, status, title} = progress
 
   return (
-    <div>
-        {description}
-        {title}
-        {moodboard}
+    <div id="classicCards">
+        {description}<br/>
+        {title}<br/>
+        {moodboard}<br/>
         {status}
     </div>
   )

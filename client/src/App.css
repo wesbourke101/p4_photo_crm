@@ -71,3 +71,16 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  #classicCards {
+    padding: 12px 20px;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    /* display: block; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
