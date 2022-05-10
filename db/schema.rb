@@ -10,25 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_06_161029) do
+ActiveRecord::Schema.define(version: 2022_05_10_160736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clients", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.string "first_name"
     t.string "last_name"
     t.string "title"
     t.string "profile_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   create_table "photographers", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.string "email"
     t.string "first_name"
     t.string "last_name"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 2022_05_06_161029) do
     t.string "profile_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   create_table "projects", force: :cascade do |t|

@@ -3,40 +3,37 @@ import CompletedCard from './CompletedCard'
 import InProgressCard from './InProgressCard'
 import PendingCard from './PendingCard'
 
-
-function ClientStatusCards({photoProjects}) {
+function ClientStatusCards({currentUserProjects, currentUser}) {
     //////////////////////////////////////////////////////////////////////////
-    // console.log(photoProjects)
-    const completed = photoProjects.filter((completedProject) => completedProject.status === 'Completed')
-    // console.log(completed)
-    const pending = photoProjects.filter((pendingProject) => pendingProject.status === 'pending approval')
-    // console.log(pending)
-    const inProgress = photoProjects.filter((progress) => progress.status === 'In progress')
-    // console.log(inProgress)
+    const completed = currentUserProjects.filter((completedProject) => completedProject.status === 'Completed')
+    const pending = currentUserProjects.filter((pendingProject) => pendingProject.status === 'pending approval')
+    const inProgress = currentUserProjects.filter((progress) => progress.status === 'In progress')
     ////////////////////////////////////////////////////////////////////////
     const mappedPending = pending.map((pend) => {return <PendingCard pend={pend}/>})
     const mappedInProgress = inProgress.map((progress) => {return <InProgressCard progress={progress}/>})
     const mappedCompleted = completed.map((complete) => {return <CompletedCard complete={complete}/>})
     ////////////////////////////////////////////////////////////////////////
+  
     return (
-    <div className="flex-container" id="mainDivcard">
-        <div className='flex-container' id="clientNameCardDiv"> 
-            make client name card here 
+        <div className="flex-container" id="mainDivcard">
+            <div className='flex-container' id="clientNameCardDiv"> 
+                Client Info: <br/> 
+                <div id="classicCards">{currentUser.first_name} {currentUser.last_name}</div>
+            </div>
+            <div className='flex-container' id="pendingApprovalCardDiv">
+                Pending approval: <br/> 
+                {mappedPending}
+            </div>
+            <div className='flex-container' id="inProgressCardDiv">
+                In progress: <br/> 
+                {mappedInProgress}
+            </div>
+            <div className='flex-container' id="completedCardDiv">
+                Completed jobs: <br/> 
+                {mappedCompleted}
+            </div>
         </div>
-        <div className='flex-container' id="pendingApprovalCardDiv">
-            make pending approval cards
-            {mappedPending}
-        </div>
-        <div className='flex-container' id="inProgressCardDiv">
-            make in progress cards
-            {mappedInProgress}
-        </div>
-        <div className='flex-container' id="completedCardDiv">
-            make completed cards
-            {mappedCompleted}
-        </div>
-    </div>
-  )
+    )
 }
 
 export default ClientStatusCards

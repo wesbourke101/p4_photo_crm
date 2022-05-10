@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "../App.css"
 
-function Login({ loginFunction}) {
+function Login({ loginFunction, setCurrentUser }) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     
