@@ -1,33 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 // Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Completed", client: c1, photographer: p1)
 
 function AddProject() {
+  const [newProject, setNewProject] = useState({
+    title: "",
+    description: "",
+    due_date: Date.now(),
+    moodboard: "",
+    photographer: ""
+  });
+
+  function newProjectAction(e) {
+    setNewProject({...newProject, [e.target.name]: e.target.value})
+  }
+
   function createNewProject(e) {
     e.preventDefault()
-    console.log(e)
+    console.log(newProject)
   }
   return (
     <div>
         <div>
-            <div id="classicCards">
-                <form onSubmit={createNewProject}>
+            <div >
+              
+                <form onSubmit={createNewProject} id="classicCards">
                     <label for="input_title">Title of job</label>
-                    <input name="title" type="type" value="placeHolder"/>
+                    <input onChange={newProjectAction} name="title" type="type" value={newProject.title}/>
 
                     <label for="input_description">Job description</label>
-                    <input name="description" type="type" value="placeHolder"/>
+                    <input onChange={newProjectAction} name="description" type="type" value={newProject.description}/>
 
                     <label for="input_due_date">Date of job</label>
-                    <input name="due_date" type="datetime"/>
+                    <input onChange={newProjectAction} name="due_date" type="datetime-local" value={newProject.due_date}/>
 
                     <label for="input_moodboard">Title of job</label>
-                    <input name="moodboard" type="type" value="placeHolder"/>
-                    <input name="status" type="type" value="placeHolder"/>
-                    <select name="photographer">
+                    <input onChange={newProjectAction} name="moodboard" type="type" value={newProject.moodboard}/>
+
+                    <select name="photographer" onChange={newProjectAction} value={newProject.photographer}>
                       <option value="null"> ---------look here------ </option>
-                      <option value="photographerName">Name1</option>
-                      <option value="photographerName">Name2</option>
-                      <option value="photographerName">Name3</option>
+                      <option value="wes">Name1</option>
+                      <option value="caleb">Name2</option>
+                      <option value="chett">Name3</option>
                     </select>
                     <button type="submit">[X]</button>
                 </form>

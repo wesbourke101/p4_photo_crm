@@ -11,7 +11,6 @@ import AddProject from './AddProject';
     const [currentUserProjects, setCurrentUserProjects] = useState([])
     let navigate = useNavigate();
 
-
     useEffect(() => {
       fetch('/auth')
       .then(res => {
