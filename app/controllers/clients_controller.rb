@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
     before_action :find_client, only: [:show, :update, :destroy]
+    skip_before_action :authorized, only: [:index]
     # setting up full crud so I can copy paste to all and iterate out later... 
 
     def index

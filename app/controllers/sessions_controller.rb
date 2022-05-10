@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
-# skip_before_action :authorized?, only: :create
+ skip_before_action :authorized, only: :create
 
-def create
+ def create
+  
     user = Client.find_by(username: params[:username]) || Photographer.find_by(username: params[:username])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
