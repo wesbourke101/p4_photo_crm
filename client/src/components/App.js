@@ -103,14 +103,16 @@ import FullProjectNav from './FullProjectNav';
 //////////////////////////////////////////////////////////////////////
   return (
     <div>
+      <div>
         {currentUser.id ? <Header logUserOut={logUserOut}/> : null}
           <Routes>
             <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
             <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
-            <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} />} />
+            <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
             <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
             <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
           </Routes>
+       </div>   
     </div>
   );
 }
