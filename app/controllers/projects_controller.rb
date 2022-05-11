@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :find_projects, only: [:show, :update, :destroy]
+    skip_before_action :authorized, only: [:index, :create]
     
     def index
         render json: Project.all

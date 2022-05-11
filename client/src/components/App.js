@@ -56,20 +56,8 @@ import Header from './Header';
       })
       .catch( error => console.log(error.message));
     }
-<<<<<<< HEAD
 //////////////////////////////////////////////////////////////////    
 //////////////////////////////////////////////////////////////////
-=======
-
-  const [photoProjects, setPhotoProjects] = useState([])
-    useEffect(() => {
-      fetch(`http://localhost:3000/projects`)
-      .then( res => res.json())
-      .then( data => setPhotoProjects(data))
-      .catch( error => console.log(error.message)
-    )}, [])
-    
->>>>>>> ca9d15d4ec7e755b65c3252f4cafd1dc8a2060c8
     function logUserOut() {
       fetch(`/logout`, {
           method: "DELETE"
@@ -114,17 +102,15 @@ import Header from './Header';
 //////////////////////////////////////////////////////////////////////
   return (
     <div>
+      <div>
         {currentUser.id ? <Header logUserOut={logUserOut}/> : null}
           <Routes>
             <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
             <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
-<<<<<<< HEAD
-            <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} />} />
-=======
-            <Route path="/add_project" element={<AddProject />} />
->>>>>>> ca9d15d4ec7e755b65c3252f4cafd1dc8a2060c8
+            <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
             <Route path="/my_projects/:id" element={<SingleProjectView currentProject={currentProject}/>} /> 
           </Routes>
+       </div>   
     </div>
   );
 }
