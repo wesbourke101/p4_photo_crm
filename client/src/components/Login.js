@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
 import "../App.css"
+import LogOut from './LogOut'
+import Modal from './Modal'
 
-function Login({ loginFunction, setCurrentUser }) {
+
+function Login({ loginFunction, setCurrentUser, postNewUser}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [toggleModal, setToggleModal] =useState(false)
     
     function formSubmit(event) {
         event.preventDefault()
@@ -25,7 +29,7 @@ function Login({ loginFunction, setCurrentUser }) {
         setPassword(event.target.value)
     }
     function modalPopUp() {
-        console.log("worked!")
+        setToggleModal(true)
     }
     function changeBackground(e) {
         e.target.style.background = 'blue';
@@ -43,9 +47,11 @@ function Login({ loginFunction, setCurrentUser }) {
                 <input type="text" name="usrName" onChange={changeUsername} value={username} />
                 <label>Password:</label>  
                 <input type="text" name="pasWord" onChange={changePassword} value={password} />
-                <button type="submit">[X]</button>
+                <button type="submit">Sign In</button>   
             </form>   
-            <div className="modal" onClick={modalPopUp} onMouseEnter={changeBackground} onMouseLeave={ReturnBackground}>Don't have an account? Sign up</div>
+            <div>Don't have an account? Sign up!</div>
+            <button onClick={modalPopUp}> Sign Up</button>
+            {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
        </div>
     </div>
   )

@@ -1,11 +1,14 @@
 import '../App.css';
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import NavBar from './NavBar';
 import Login from './Login';
 import AddProject from './AddProject';
+<<<<<<< HEAD
 import SingleProjectView from './SingleProjectView';
 import ClientView from './ClientView';
+=======
+import Header from './Header';
+>>>>>>> wesBranchMay11
 
   function App() {
     const [currentUser, setCurrentUser] = useState([])
@@ -49,6 +52,7 @@ import ClientView from './ClientView';
       .catch( error => console.log(error.message));
     }
 
+<<<<<<< HEAD
   // const [photoProjects, setPhotoProjects] = useState([])
   //   useEffect(() => {
   //     fetch(`http://localhost:3000/projects`)
@@ -58,11 +62,52 @@ import ClientView from './ClientView';
   //   )}, [])
 
     return (
+=======
+  const [photoProjects, setPhotoProjects] = useState([])
+    useEffect(() => {
+      fetch(`http://localhost:3000/projects`)
+      .then( res => res.json())
+      .then( data => setPhotoProjects(data))
+      .catch( error => console.log(error.message)
+    )}, [])
+    
+    function logUserOut() {
+      fetch(`/logout`, {
+          method: "DELETE"
+      })
+      .catch( error => console.log(error.message));
+      setCurrentUser([])
+      navigate(`/`)
+    }
+
+    function postNewUser(newUser) {
+      fetch(`/clients`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+          },
+          body: JSON.stringify(
+              newUser
+          )
+      })
+      .then( res => res.json())
+      .then( data => console.log(data))
+      .catch( error => console.log(error.message));
+   }
+    
+  return (
+>>>>>>> wesBranchMay11
     <div>
-        <NavBar />
+        {currentUser.id ? <Header logUserOut={logUserOut}/> : null}
           <Routes>
+<<<<<<< HEAD
             <Route path="/" element={<Login loginFunction={loginFunction} />}></Route>
             <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
+=======
+            <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
+            <Route path="/my_projects" element={<ClientStatusCards currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
+>>>>>>> wesBranchMay11
             <Route path="/add_project" element={<AddProject />} />
             <Route path="/my_projects/:id" element={<SingleProjectView currentProject={currentProject}/>} /> 
           </Routes>
