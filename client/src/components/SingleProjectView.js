@@ -6,7 +6,7 @@ function SingleProjectView({ setCurrentProject, project, handleClick}) {
 
   let navigate = useNavigate()
 
-  
+
   function handleClick() {
     console.log(project.id)
     setCurrentProject(project)
