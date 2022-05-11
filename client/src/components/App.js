@@ -1,10 +1,10 @@
 import '../App.css';
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import NavBar from './NavBar';
 import Login from './Login';
 import ClientStatusCards from './ClientStatusCards';
 import AddProject from './AddProject';
+import Header from './Header';
 
   function App() {
     const [currentUser, setCurrentUser] = useState([])
@@ -51,21 +51,37 @@ import AddProject from './AddProject';
       .then( data => setPhotoProjects(data))
       .catch( error => console.log(error.message)
     )}, [])
+    
+    function logUserOut() {
+      fetch(`/logout`, {
+          method: "DELETE"
+      })
+      .catch( error => console.log(error.message));
+      setCurrentUser([])
+      navigate(`/`)
+    }
 
-    // useEffect(() => {
-    //   if (currentUser.id){
-    //     fetch(`http://localhost:3000/projects/${currentUser.id}`)
-    //     .then( res => res.json())
-    //     .then( data => console.log(data))
-    //     .catch( error => console.log(error.message));
-    //   }  
-    // }, [currentUser])
-    console.log(currentUserProjects)
+    function postNewUser(newUser) {
+      fetch(`/clients`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+          },
+          body: JSON.stringify(
+              newUser
+          )
+      })
+      .then( res => res.json())
+      .then( data => console.log(data))
+      .catch( error => console.log(error.message));
+   }
+    
   return (
     <div>
-        <NavBar />
+        {currentUser.id ? <Header logUserOut={logUserOut}/> : null}
           <Routes>
-            <Route path="/" element={<Login loginFunction={loginFunction} />}></Route>
+            <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
             <Route path="/my_projects" element={<ClientStatusCards currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
             <Route path="/add_project" element={<AddProject />} />
           </Routes>

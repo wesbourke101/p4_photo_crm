@@ -18,6 +18,7 @@ function AddProject() {
     e.preventDefault()
     console.log(newProject)
   }
+  
   return (
     <div>
         <div>

@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
     before_action :find_client, only: [:show, :update, :destroy]
-    skip_before_action :authorized, only: [:index]
+    skip_before_action :authorized, only: [:index, :create]
     # setting up full crud so I can copy paste to all and iterate out later... 
 
     def index
@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-        params.permit(:username, :password, :first_name, :last_name, :title, :profile_picture)
+        params.permit(:username, :password, :first_name, :last_name, :title, :profile_picture, :password_confirmation)
     end
 end
 

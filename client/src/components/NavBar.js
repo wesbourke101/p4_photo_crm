@@ -7,7 +7,7 @@ function NavBar() {
         <nav>
             <Link to="/">Login</Link> | {" "}
             <Link to="/my_projects">My Projects</Link> | {" "}
-            <Link to="/add_project">My Projects</Link>
+            <Link to="/add_project">Create New Project</Link>
       </nav>
     </div>
   )
