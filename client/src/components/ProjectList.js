@@ -1,18 +1,18 @@
 import React from 'react'
-// import { useNavigate } from "react-router-dom";
 import SingleProjectView from './SingleProjectView';
 
-function ProjectList({currentUserProjects, currentUser}) {
+function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
 
     /////////////////////////////////////////////////////////////////////////
     const completed = currentUserProjects.filter((completedProject) => completedProject.status === 'Completed')
     const pending = currentUserProjects.filter((pendingProject) => pendingProject.status === 'pending approval')
     const inProgress = currentUserProjects.filter((progress) => progress.status === 'In progress')
     ////////////////////////////////////////////////////////////////////////
-    const mappedPending = pending.map((projects) => {return <SingleProjectView key={projects.id} project={projects}/>})
-    const mappedInProgress = inProgress.map((projects) => {return <SingleProjectView key={projects.id} project={projects}/>})
-    const mappedCompleted = completed.map((projects) => {return <SingleProjectView key={projects.id} project={projects}/>})
+    const mappedPending = pending.map((projects) => {return <SingleProjectView key={projects.id} project={projects} setCurrentProject={setCurrentProject} />})
+    const mappedInProgress = inProgress.map((projects) => {return <SingleProjectView key={projects.id} project={projects} setCurrentProject={setCurrentProject} />})
+    const mappedCompleted = completed.map((projects) => {return <SingleProjectView key={projects.id} project={projects} setCurrentProject={setCurrentProject}/>})
     ////////////////////////////////////////////////////////////////////////
+
     return (
      <div>
         <div>
@@ -43,11 +43,5 @@ function ProjectList({currentUserProjects, currentUser}) {
 }
 
 export default ProjectList
-
-
-// onClick={() => {
-//     setCurrentProject(projects)
-//     navigate(`/my_projects/${currentProject.id}`)
-// }}
 
 

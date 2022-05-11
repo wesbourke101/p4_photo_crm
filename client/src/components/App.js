@@ -6,6 +6,7 @@ import AddProject from './AddProject';
 import SingleProjectView from './SingleProjectView';
 import ClientView from './ClientView';
 import Header from './Header';
+import FullProjectNav from './FullProjectNav';
 
   function App() {
     const [currentUser, setCurrentUser] = useState([])
@@ -107,7 +108,8 @@ import Header from './Header';
             <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
             <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
             <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} />} />
-            <Route path="/my_projects/:id" element={<SingleProjectView currentProject={currentProject}/>} /> 
+            <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
+            <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
           </Routes>
     </div>
   );
