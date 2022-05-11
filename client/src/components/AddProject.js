@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-// Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Completed", client: c1, photographer: p1)
 
 function AddProject() {
   const [newProject, setNewProject] = useState({
