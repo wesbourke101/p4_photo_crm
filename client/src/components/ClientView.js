@@ -14,4 +14,3 @@ function ClientView({currentUserProjects, setCurrentProject, currentProject, cur
 }
 
 export default ClientView
-
