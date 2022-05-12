@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import UpdateModal from './UpdateModal'
 
-function FullProjectNav({ currentProject, onUpdateProject }) {
+function FullProjectNav({ onDeleteProject, currentProject, onUpdateProject }) {
 
   const [toggleUpdateModal, setToggleUpdateModal] = useState(false)    
 
@@ -18,8 +18,8 @@ function FullProjectNav({ currentProject, onUpdateProject }) {
             <p>{currentProject.description}</p>
             <p>{currentProject.due_date}</p>
             <p>{currentProject.moodboard}</p>
-            
             <button onClick={modalPopUp}>Edit</button>
+            <button onClick={() => onDeleteProject(currentProject.id)}>Delete</button>
             {toggleUpdateModal ? <UpdateModal setToggleUpdateModal={setToggleUpdateModal} onUpdateProject={onUpdateProject}/> : null}
         </div>
    </div>

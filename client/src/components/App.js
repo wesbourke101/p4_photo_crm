@@ -18,7 +18,7 @@ import PhotographerHome from './PhotographerHome';
     const [userId, setUserId] = useState(0)
     const [userType, setUserType] = useState('')
     const [toggleState, setToggleState] = useState(true)
-////////////////////////////
+//////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
   useEffect(() => {
         fetch('/auth')
@@ -134,9 +134,17 @@ function onUpdateProject(updateProject) {
     })
     .catch( error => console.log(error.message));
  }
-//  console.log(userId)
-//  console.log(userType)
+ //////////////////////////////////////////////////////////////////////
+
+ function onDeleteProject(idToDelete) {
+  fetch (`/projects/${idToDelete}`,{
+    method: "DELETE"
+  })
+  setToggleState(!toggleState)
+  navigate('/my_projects')
+ }
 //////////////////////////////////////////////////////////////////////
+
   return (
     <div>
       <div>
@@ -154,7 +162,7 @@ function onUpdateProject(updateProject) {
                   <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
                   <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
                   <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
-                  <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject} onUpdateProject={onUpdateProject}/>} /> 
+                  <Route path="/project/:id" element={<FullProjectNav onDeleteProject={onDeleteProject} currentProject={currentProject} onUpdateProject={onUpdateProject}/>} /> 
                 </>}
           </Routes>
        </div>   
