@@ -31,12 +31,12 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
     function modalPopUp() {
         setToggleModal(true)
     }
-    function changeBackground(e) {
-        e.target.style.background = 'blue';
-      }
-    function ReturnBackground(e) {
-        e.target.style.background = 'white';
-    }
+    // function changeBackground(e) {
+    //     e.target.style.background = 'blue';
+    //   }
+    // function ReturnBackground(e) {
+    //     e.target.style.background = 'white';
+    // }
     
 
   return (

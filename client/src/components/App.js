@@ -7,6 +7,7 @@ import SingleProjectView from './SingleProjectView';
 import ClientView from './ClientView';
 import Header from './Header';
 import FullProjectNav from './FullProjectNav';
+import PhotographerHome from './PhotographerHome';
 
   function App() {
     const [currentUser, setCurrentUser] = useState([])
@@ -53,7 +54,12 @@ import FullProjectNav from './FullProjectNav';
       .then( data =>  {
           setCurrentUser(data)
           setCurrentUserProjects(data.projects)
-          navigate(`/my_projects`)
+          if(data.bio) { 
+            navigate(`/home`)
+          } else {
+            navigate(`/my_projects`)
+          }
+          
       })
       .catch( error => console.log(error.message));
     }
@@ -104,13 +110,22 @@ import FullProjectNav from './FullProjectNav';
   return (
     <div>
       <div>
-        {currentUser.id ? <Header logUserOut={logUserOut}/> : null}
+        {currentUser.id ? <Header logUserOut={logUserOut} currentUser={currentUser}/> : null}
           <Routes>
             <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
-            <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
-            <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
-            <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
-            <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
+            {currentUser.bio ?   
+                <>
+                  <Route path="/home" element={<PhotographerHome currentUserProjects={currentUserProjects} currentUser={currentUser} setCurrentProject={setCurrentProject} currentProject={currentProject}/>} />
+                  <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
+
+                </> 
+              : 
+                <>
+                  <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
+                  <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
+                  <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
+                  <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
+                </>}
           </Routes>
        </div>   
     </div>
