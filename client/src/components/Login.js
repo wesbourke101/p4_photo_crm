@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
 import "../App.css"
-import LogOut from './LogOut'
 import Modal from './Modal'
 
 
 function Login({ loginFunction, setCurrentUser, postNewUser}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [toggleModal, setToggleModal] =useState(false)
+    const [toggleModal, setToggleModal] = useState(false)
     
     function formSubmit(event) {
         event.preventDefault()

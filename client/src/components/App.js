@@ -11,19 +11,9 @@ import FullProjectNav from './FullProjectNav';
   function App() {
     const [currentUser, setCurrentUser] = useState([])
     const [currentUserProjects, setCurrentUserProjects] = useState([])
-    /////// Caleb - working on current project view
     const [currentProject, setCurrentProject] = useState([])
-    /////// Caleb - working on current project view
-    const [photoProjects, setPhotoProjects] = useState([])
     let navigate = useNavigate();
 //////////////////////////////////////////////////////////////////
-  useEffect(() => {
-    fetch(`http://localhost:3000/projects`)
-    .then( res => res.json())
-    .then( data => setPhotoProjects(data))
-    .catch( error => console.log(error.message)
-  )}, [])   
-
   useEffect(() => {
         fetch('/auth')
         .then(res => {
@@ -34,8 +24,25 @@ import FullProjectNav from './FullProjectNav';
             })
           }
         })
-      }, [])
+      }, [currentProject, currentUserProjects])
 //////////////////////////////////////////////////////////////////
+
+///////// Update Project ///////////
+
+function onUpdateProject(updateProject) {
+  fetch (`/projects/${currentProject.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type":"application/json"
+    },
+    body: JSON.stringify({
+      status: updateProject.status,
+    })
+  })
+  .then (res => res.json())
+  .then (data => setCurrentProject(data))
+}
+///////// Update Project ///////////
 //////////////////////////////////////////////////////////////////
     function loginFunction(username, password) {
       fetch(`/login`, {
@@ -69,7 +76,7 @@ import FullProjectNav from './FullProjectNav';
     }
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
-    function postNewUser(newUser) {
+  function postNewUser(newUser) {
       fetch(`/clients`, {
           method: "POST",
           headers: {
@@ -83,8 +90,8 @@ import FullProjectNav from './FullProjectNav';
       .then( res => res.json())
       .then( data => console.log(data))
       .catch( error => console.log(error.message));
-   }
-
+  }
+/////////////////////////////////////////////////
    function postNewProjy(newProjy) {
     fetch(`/projects`, {
         method: "POST",
@@ -110,7 +117,7 @@ import FullProjectNav from './FullProjectNav';
             <Route path="/my_projects" element={<ClientView currentProject={currentProject} setCurrentProject={setCurrentProject} currentUserProjects={currentUserProjects} currentUser={currentUser}/>} />
             <Route path="/add_project" element={<AddProject postNewProjy={postNewProjy} currentUser={currentUser}/>} />
             <Route path="/my_projects/:id" element={<SingleProjectView setCurrentProject={setCurrentProject} />} /> 
-            <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject}/>} /> 
+            <Route path="/project/:id" element={<FullProjectNav currentProject={currentProject} onUpdateProject={onUpdateProject}/>} /> 
           </Routes>
        </div>   
     </div>
