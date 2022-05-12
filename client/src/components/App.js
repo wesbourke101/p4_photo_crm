@@ -14,6 +14,11 @@ import PhotographerHome from './PhotographerHome';
     const [currentUserProjects, setCurrentUserProjects] = useState([])
     const [currentProject, setCurrentProject] = useState([])
     let navigate = useNavigate();
+/////////////////////wes getting wild
+    const [userId, setUserId] = useState(0)
+    const [userType, setUserType] = useState('')
+    const [toggleState, setToggleState] = useState(true)
+////////////////////////////
 //////////////////////////////////////////////////////////////////
   useEffect(() => {
         fetch('/auth')
@@ -25,9 +30,18 @@ import PhotographerHome from './PhotographerHome';
             })
           }
         })
-      }, [currentProject, currentUserProjects])
-//////////////////////////////////////////////////////////////////
+      }, [currentProject])
 
+      useEffect(() => {
+        fetch(`/${userType}/${userId}`)
+        .then( res => res.json())
+        .then( data => {
+          setCurrentUser(data)
+          setCurrentUserProjects(data.projects)
+        })
+        .catch( error => console.log(error.message));
+      }, [toggleState])
+//////////////////////////////////////////////////////////////////
 ///////// Update Project ///////////
 
 function onUpdateProject(updateProject) {
@@ -59,14 +73,18 @@ function onUpdateProject(updateProject) {
       })
       .then( res => res.json())
       .then( data =>  {
-          setCurrentUser(data)
-          setCurrentUserProjects(data.projects)
+          setUserId(data.id)
+          if(data.bio) {
+            setUserType("photographers")
+          } else {
+            setUserType("clients")
+          }
+          setToggleState(!toggleState)
           if(data.bio) { 
             navigate(`/home`)
           } else {
             navigate(`/my_projects`)
           }
-          
       })
       .catch( error => console.log(error.message));
     }
@@ -110,9 +128,14 @@ function onUpdateProject(updateProject) {
         )
     })
     .then( res => res.json())
-    .then( data => console.log(data))
+    .then( data => {
+      console.log(data)
+      setToggleState(!toggleState)
+    })
     .catch( error => console.log(error.message));
  }
+//  console.log(userId)
+//  console.log(userType)
 //////////////////////////////////////////////////////////////////////
   return (
     <div>
