@@ -16,11 +16,11 @@ c5 = Client.create!(username: "user5", password: "123", first_name: "chett", las
 puts "Seeding Projects...."
 
 Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Completed", client: c1, photographer: p1)
-Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "In progress", client: c2, photographer: p2)
-Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "In progress", client: c3, photographer: p3)
+Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "In Progress", client: c2, photographer: p2)
+Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "In Progress", client: c3, photographer: p3)
 Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Completed", client: c4, photographer: p1)
-Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "pending approval", client: c5, photographer: p2)
-Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "pending approval", client: c1, photographer: p3)
+Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Pending Approval", client: c5, photographer: p2)
+Project.create!(title: "Professional headshots", description: "Lorem ipsum", due_date: DateTime.new , moodboard: "www.moodboard.com", status: "Pending Approval", client: c1, photographer: p3)
 
 puts "Done seeding!"
 

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function AddProject({postNewProjy, currentUser}) {
   ///////////////////////////////////////////////////////////////////
   const [photoGraphers, setPhotoGraphers] = useState([])
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3000/photographers`)
@@ -17,7 +20,7 @@ function AddProject({postNewProjy, currentUser}) {
     due_date: Date.now(),
     moodboard: "",
     photographer: "",
-    status: "pending approval",
+    status: "Pending Approval",
     photographer_id: 0,
     client_id: currentUser.id
   });
@@ -29,6 +32,7 @@ function AddProject({postNewProjy, currentUser}) {
   function createNewProject(e) {
     e.preventDefault()
     postNewProjy(newProject)
+    navigate('/my_projects')
   }
   const photographerMappedOptions = photoGraphers.map((photoOption) => {return <option value={photoOption.id} >{photoOption.first_name} {photoOption.last_name}</option> })
   return (
@@ -49,10 +53,11 @@ function AddProject({postNewProjy, currentUser}) {
                     <input onChange={newProjectAction} name="moodboard" type="type" value={newProject.moodboard}/>
 
                     <label for="input_moodboard">Photographer:</label>
-                      <select name="photographer_id" onChange={newProjectAction} value={newProject.photographer_id}>
-                        <option value="null"> ---------look here------ </option>
-                        {photographerMappedOptions}
-                      </select>
+
+                    <select name="photographer_id" onChange={newProjectAction} value={newProject.photographer_id}>
+                      <option value="null"> ---------look here------ </option>
+                      {photographerMappedOptions}
+                    </select>
                     <button type="submit">Submit Job</button>
                 </form>
             </div>
