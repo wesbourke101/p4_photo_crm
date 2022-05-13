@@ -83,6 +83,7 @@
 }
   body {
     background-image: linear-gradient(to right, #76b5c5, #1e81b0, #154c79);
+    font-family: 'Open Sans', sans-serif;
   }
 
   .logInDiv {
@@ -91,13 +92,14 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 20rem;
     /* border: 2px solid black; */
     border-radius: 10px;
     padding: 1rem;
     background-color: white;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%);
   }
 
   .dot {
@@ -107,6 +109,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 50%;
+    box-shadow: 0 2px 20px rgba(24, 162, 230, 0.5);
     transform: translate(-50%);
   }
 
@@ -122,5 +125,17 @@
     padding: .2rem;
   }
 
+  #loginTextId {
+    text-align: center;
+    color:rgba(24, 162, 230, 1)
+  }
 
+  #paragonHeader {
+    color: #fff;
+  }
+
+  hr.new5 {
+    border: 1rem solid rgba(24, 162, 230, 1);
+    border-radius: 5px;
+  }
 

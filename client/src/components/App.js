@@ -147,7 +147,7 @@ function onUpdateProject(updateProject) {
 
   return (
     <div className="bg-slate-600">
-      <h1>Paragon.io</h1>
+      <h1 id="paragonHeader" >Paragon.io</h1>
       <div className="bg-blue-500">
         {currentUser.id ? <Header logUserOut={logUserOut} currentUser={currentUser}/> : null}
           <Routes>

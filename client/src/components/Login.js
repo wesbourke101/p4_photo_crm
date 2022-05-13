@@ -34,10 +34,17 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
 
   return (
     <div>
+        
        <div className="logInDiv">
             <span class="dot"></span>
             <br/><br/>
            <form id="logInForm" onSubmit={formSubmit}>
+               <div id="loginTextId">
+                    <label>Welcome to Paragon.io</label>
+                        <br/>
+                    <label>Please sign in </label>
+               </div>
+               <hr></hr>
                 <table className="tableCss">
                     <tbody>
                         <tr><td><label>User Name:</label> </td><td><input type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
@@ -56,6 +63,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
             </form>   
             {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
        </div>
+       
     </div>
   )
 }
