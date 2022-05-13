@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 
+
 function AddProject({postNewProjy, currentUser}) {
   ///////////////////////////////////////////////////////////////////
   const [photoGraphers, setPhotoGraphers] = useState([])
+  
 
   let navigate = useNavigate();
 
@@ -34,9 +36,13 @@ function AddProject({postNewProjy, currentUser}) {
     postNewProjy(newProject)
     navigate('/my_projects')
   }
+  // <style>
+  //   body{ background-color: #000000; }
+  // </style>
   const photographerMappedOptions = photoGraphers.map((photoOption) => {return <option value={photoOption.id} >{photoOption.first_name} {photoOption.last_name}</option> })
   return (
-    <div className="user-card">
+    <div className="user-card" >
+
         <div className="user-card">
             <div>
                 <form onSubmit={createNewProject} id="classicCards" className="grid grid-rows-4 grid-flow-col gap-4">
