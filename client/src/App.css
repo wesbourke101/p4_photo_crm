@@ -370,7 +370,7 @@
 }
 
 .custom-container {
-  display: flex;
+  display: inline-grid;
 }
 
 .custom-new-proj {
