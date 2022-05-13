@@ -83,6 +83,10 @@
     font-family: 'Open Sans', sans-serif;
   }
 
+  body.logged-in {
+    background-color: white;
+  }
+
   .logInDiv {
     position: absolute;
     top: 30%;
@@ -428,4 +432,39 @@
   order: 5;
   flex-direction: row;
   align-self: flex-start;
+}
+  
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #154c79;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .3), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+#linkElement {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#linkElement:hover{
+  background-color: #111;
+}
+
+#liLogOut {
+  float: right;
+}
+
+#logOutButtonPosition {
+  position: absolute;
+  transform: translate(-120%);
 }

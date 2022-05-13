@@ -5,8 +5,9 @@ import LogOut from './LogOut'
 function Header({logUserOut, currentUser}) {
   return (
     <div id="headerDiv">
-         <NavBar currentUser={currentUser}/>
-         <LogOut logUserOut={logUserOut}/>
+        <ul>
+            <NavBar logUserOut={logUserOut} currentUser={currentUser}/>
+        </ul> 
     </div>
   )
 }

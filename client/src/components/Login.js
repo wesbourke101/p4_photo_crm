@@ -34,7 +34,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
 
   return (
     <div>
-        
+        <h1 id="paragonHeader" >Paragon.io</h1>
        <div className="logInDiv">
             <span className="dot"></span>
             <br/><br/>
