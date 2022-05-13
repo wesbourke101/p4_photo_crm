@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 * {
   box-sizing: border-box;
@@ -81,6 +82,48 @@
   font-size: .8em; 
   color: #333333;  
 }
+=======
+  body {
+    background-image: linear-gradient(to right, #76b5c5, #1e81b0, #154c79);
+  }
+
+  .logInDiv {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 15rem;
+    height: 15rem;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .dot {
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to right, #76b5c5, #1e81b0, #154c79);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+
+  table { 
+    border-collapse:collapse;
+    border-style : hidden!important;
+    border:none; 
+    
+  }
+
+  td {
+    border: none;
+    padding: .2rem;
+  }
+>>>>>>> wesAfterHours12
 
 
 

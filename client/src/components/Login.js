@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import "../App.css"
 import Modal from './Modal'
+import '../App.css';
 
 
 function Login({ loginFunction, setCurrentUser, postNewUser}) {
@@ -30,15 +30,10 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
     function modalPopUp() {
         setToggleModal(true)
     }
-    // function changeBackground(e) {
-    //     e.target.style.background = 'blue';
-    //   }
-    // function ReturnBackground(e) {
-    //     e.target.style.background = 'white';
-    // }
     
 
   return (
+<<<<<<< HEAD
     <div className="bg-slate-600" id="pageContainerDiv">
        <div className="flex-container" id="divSignInForm">
            <form onSubmit={formSubmit}>
@@ -47,9 +42,29 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                 <label>Password:</label>  
                 <input type="text" name="pasWord" onChange={changePassword} value={password} />
                 <button type="submit">Sign In</button>   
+=======
+    <div>
+       <div className="logInDiv">
+            <span class="dot"></span>
+            <br/><br/>
+           <form id="logInForm" onSubmit={formSubmit}>
+                <table className="tableCss">
+                    <tbody>
+                        <tr><td><label>User Name:</label> </td><td><input type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
+                        <tr><td><label>Password:</label>  </td><td><input type="text" name="pasWord" onChange={changePassword} value={password} /></td></tr>
+                        <tr><td><button type="submit">Sign In</button> </td></tr>
+                        <tr></tr>
+                    </tbody>        
+                </table>  
+                <br/><br/>
+                <table>
+                    <tbody>
+                        <tr><td><text>Don't have an account? Sign up!</text></td></tr>
+                        <tr><td><button onClick={modalPopUp}> Sign Up</button></td></tr>
+                    </tbody>
+                </table>  
+>>>>>>> wesAfterHours12
             </form>   
-            <div>Don't have an account? Sign up!</div>
-            <button onClick={modalPopUp}> Sign Up</button>
             {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
        </div>
     </div>

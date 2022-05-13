@@ -38,8 +38,8 @@ function AddProject({postNewProjy, currentUser}) {
   return (
     <div>
         <div>
-            <div >
-                <form onSubmit={createNewProject} id="classicCards">
+            <div>
+                <form onSubmit={createNewProject} id="classicCards" className="grid grid-rows-4 grid-flow-col gap-4">
                     <label for="input_title">Title of job:</label>
                     <input onChange={newProjectAction} name="title" type="type" value={newProject.title}/>
 

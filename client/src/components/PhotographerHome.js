@@ -24,7 +24,6 @@ function PhotographerHome({currentUserProjects, currentUser, setCurrentProject})
         <text>Photographer</text><br/>
         <p>Bio:</p>
         <p>{currentUser.bio}</p>
-
         <a href={currentUser.website}>{currentUser.first_name}'s website</a><br/>
         -----------------------------------------
       </div>  
