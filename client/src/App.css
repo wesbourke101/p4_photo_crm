@@ -218,6 +218,7 @@
   display: flex;
   max-width: 20rem;
   margin: 0 auto;
+  margin-top: 60px;
   padding: .2rem;
   border-radius: 0.5rem;
   background-color: #fff;
@@ -254,7 +255,7 @@
 }
 
 .categories-styling {
-  color: white;
+  color: #718096;
 }
 
 
@@ -425,6 +426,7 @@
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-left: 18rem;
 }
 
 
