@@ -36,8 +36,8 @@ function AddProject({postNewProjy, currentUser}) {
   }
   const photographerMappedOptions = photoGraphers.map((photoOption) => {return <option value={photoOption.id} >{photoOption.first_name} {photoOption.last_name}</option> })
   return (
-    <div className="user-card">
-        <div className="user-card">
+    <div className="custom-container">
+        <div className="custom-new-proj">
             <div>
                 <form onSubmit={createNewProject} id="classicCards" className="grid grid-rows-4 grid-flow-col gap-4">
                     <label for="input_title">Title of job:</label>
@@ -58,7 +58,7 @@ function AddProject({postNewProjy, currentUser}) {
                       <option value="null"> ---------look here------ </option>
                       {photographerMappedOptions}
                     </select>
-                    <button className="button-design-2" type="submit">Submit Job</button>
+                    <button className="button-design-2-form" type="submit">Submit Job</button>
                 </form>
             </div>
         </div>
