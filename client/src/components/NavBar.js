@@ -1,19 +1,22 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import LogOut from './LogOut';
 
-function NavBar({currentUser}) {
+function NavBar({currentUser, logUserOut}) {
   return (
     <div>
       {currentUser.bio 
         ?      
           <nav>
-            <Link to="/home">Home</Link>
+            <li><Link id="linkElement" to="/home">Home</Link></li>
+            <li id="liLogOut"><LogOut logUserOut={logUserOut}/></li>
           </nav>  
         :      
           <nav>
-              <Link to="/">Login</Link> | {" "}
-              <Link to="/my_projects">My Projects</Link> | {" "}
-              <Link to="/add_project">Create New Project</Link>
+              <li><Link id="linkElement" to="/">Login</Link></li>
+              <li><Link id="linkElement" to="/my_projects">My Projects</Link></li>
+              <li><Link id="linkElement" to="/add_project">Create New Project</Link></li>
+              <li id="liLogOut"><LogOut logUserOut={logUserOut}/></li>
               <Link to="/project/:id"></Link>
           </nav>}
 

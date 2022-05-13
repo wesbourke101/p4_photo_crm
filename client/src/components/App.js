@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Login from './Login';
 import AddProject from './AddProject';
 import SingleProjectView from './SingleProjectView';
@@ -9,11 +9,14 @@ import Header from './Header';
 import FullProjectNav from './FullProjectNav';
 import PhotographerHome from './PhotographerHome';
 
+
   function App() {
     const [currentUser, setCurrentUser] = useState([])
     const [currentUserProjects, setCurrentUserProjects] = useState([])
     const [currentProject, setCurrentProject] = useState([])
     let navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
 /////////////////////wes getting wild
     const [userId, setUserId] = useState(0)
     const [userType, setUserType] = useState('')
@@ -144,11 +147,9 @@ function onUpdateProject(updateProject) {
   navigate('/my_projects')
  }
 //////////////////////////////////////////////////////////////////////
-
   return (
-    <div className="bg-slate-600">
-      <h1 id="paragonHeader" >Paragon.io</h1>
-      <div className="bg-blue-500">
+    <div style={location.pathname === "/my_projects" ? {background: "white"} : null}>
+      <div>
         {currentUser.id ? <Header logUserOut={logUserOut} currentUser={currentUser}/> : null}
           <Routes>
             <Route path="/" element={<Login loginFunction={loginFunction} postNewUser={postNewUser}/>}></Route>
