@@ -36,29 +36,29 @@ function AddProject({postNewProjy, currentUser}) {
   }
   const photographerMappedOptions = photoGraphers.map((photoOption) => {return <option value={photoOption.id} >{photoOption.first_name} {photoOption.last_name}</option> })
   return (
-    <div>
-        <div>
+    <div className="user-card">
+        <div className="user-card">
             <div>
                 <form onSubmit={createNewProject} id="classicCards" className="grid grid-rows-4 grid-flow-col gap-4">
                     <label for="input_title">Title of job:</label>
-                    <input onChange={newProjectAction} name="title" type="type" value={newProject.title}/>
+                    <input className="create-new-project-background" onChange={newProjectAction} name="title" type="type" value={newProject.title}/>
 
                     <label for="input_description">Job description:</label>
-                    <input onChange={newProjectAction} name="description" type="type" value={newProject.description}/>
+                    <input className="create-new-project-background" onChange={newProjectAction} name="description" type="type" value={newProject.description}/>
 
                     <label for="input_due_date">Date of job:</label>
-                    <input onChange={newProjectAction} name="due_date" type="datetime-local" value={newProject.due_date}/>
+                    <input className="create-new-project-background"  onChange={newProjectAction} name="due_date" type="datetime-local" value={newProject.due_date}/>
 
                     <label for="input_moodboard">Moodboard:</label>
-                    <input onChange={newProjectAction} name="moodboard" type="type" value={newProject.moodboard}/>
+                    <input className="create-new-project-background" onChange={newProjectAction} name="moodboard" type="type" value={newProject.moodboard}/>
 
-                    <label for="input_moodboard">Photographer:</label>
+                    <label  for="input_moodboard">Photographer:</label>
 
-                    <select name="photographer_id" onChange={newProjectAction} value={newProject.photographer_id}>
+                    <select className="create-new-project-background" name="photographer_id" onChange={newProjectAction} value={newProject.photographer_id}>
                       <option value="null"> ---------look here------ </option>
                       {photographerMappedOptions}
                     </select>
-                    <button type="submit">Submit Job</button>
+                    <button className="button-design-2" type="submit">Submit Job</button>
                 </form>
             </div>
         </div>

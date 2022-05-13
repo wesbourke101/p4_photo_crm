@@ -49,7 +49,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                     <tbody>
                         <tr><td><label>User Name:</label> </td><td><input type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
                         <tr><td><label>Password:</label>  </td><td><input type="text" name="pasWord" onChange={changePassword} value={password} /></td></tr>
-                        <tr><td><button type="submit">Sign In</button> </td></tr>
+                        <tr><td><button className="button-design-2" type="submit">Sign In</button> </td></tr>
                         <tr></tr>
                     </tbody>        
                 </table>  
@@ -59,7 +59,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                 <table>
                     <tbody>
                         <tr><td><text>Don't have an account? Sign up!</text></td></tr>
-                        <tr><td><button onClick={modalPopUp}> Sign Up</button></td></tr>
+                        <tr><td><button className="button-design" onClick={modalPopUp}> Sign Up</button></td></tr>
                     </tbody>
                 </table>  
               

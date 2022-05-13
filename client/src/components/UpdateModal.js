@@ -17,21 +17,21 @@ function UpdateModal({ setToggleUpdateModal, onUpdateProject }) {
 
   return (
     <div className='modal'>
-        <div className='modal_content'>
+        <div className='modal_content card'>
             <div className='modal_header'>
-            <button onClick={() => setToggleUpdateModal(false)}>[X]</button>
+            <button className="button-design"  onClick={() => setToggleUpdateModal(false)}>Close</button>
                 <h4 className='modal_title'> Update Status </h4>
             </div>
             <div className='modal_body'>
 
                 <form onSubmit={updateStatus}>
-                        <label>Status</label>
+                        <label> Status </label>
                         <select value={updateProject.status} onChange={inputSelector} name="status" >
                             <option value="Pending Approval"> Pending Approval </option>
                             <option value="In Progress"> In Progress </option>
                             <option value="Completed"> Completed </option>
                         </select>
-                    <button type="submit">Update Status</button>
+                    <button className="button-design-2" type="submit">Update Status</button>
                 </form>
             </div>
         </div>
