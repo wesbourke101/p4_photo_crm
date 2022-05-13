@@ -36,7 +36,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
     <div>
         
        <div className="logInDiv">
-            <span class="dot"></span>
+            <span className="dot"></span>
             <br/><br/>
            <form id="logInForm" onSubmit={formSubmit}>
                <div id="loginTextId">
@@ -47,8 +47,8 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                <hr></hr>
                 <table className="tableCss">
                     <tbody>
-                        <tr><td><label>User Name:</label> </td><td><input type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
-                        <tr><td><label>Password:</label>  </td><td><input type="text" name="pasWord" onChange={changePassword} value={password} /></td></tr>
+                        <tr><td><label>User Name:</label> </td><td><input id="inputStyle" type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
+                        <tr><td><label>Password:</label>  </td><td><input id="inputStyle" type="text" name="pasWord" onChange={changePassword} value={password} /></td></tr>
                         <tr><td><button type="submit">Sign In</button> </td></tr>
                         <tr></tr>
                     </tbody>        
