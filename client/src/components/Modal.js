@@ -45,7 +45,7 @@ function Modal({setToggleModal, postNewUser}) {
                                 <tr><td> <label>Profile Picture Url:</label></td><td> <input id="inputStyle" name="profile_picture" value={newUser.profile_picture} onChange={inputWriter} type='text'></input></td></tr>    
                             </tbody>
                         </table>           
-                            <button type="submit">Sign Up</button>
+                            <button className="button-design" type="submit">Sign Up</button>
                     </form>
                 </div>
             </div>

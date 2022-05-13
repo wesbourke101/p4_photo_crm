@@ -14,7 +14,7 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
     ////////////////////////////////////////////////////////////////////////
 
     return (
-     <div className="bg-slate-500">
+     <div>
 
         <div className="user-card">
             <div className="user-card-image-wrapper">
@@ -28,8 +28,8 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
         </div>
 
     
-        <div className="user-card-content">
-            <h1>Pending Approval</h1>
+        <div className="categories">
+            <h1 className="categories-styling">Pending Approval</h1>
         </div>
         
         <div className="user-card-list-horizontal">
@@ -39,10 +39,10 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
         </div>
   
         
-        <div>
-            <h1>In Progress</h1>
+        <div className="categories">
+            <h1 className="categories-styling">In Progress</h1>
         </div>
-            
+
         <div className="user-card-list-horizontal">
             <div>
                 {mappedInProgress}
@@ -50,8 +50,8 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
         </div>
 
 
-        <div>
-            <h1>Completed</h1>
+        <div className="categories">
+            <h1 className="categories-styling">Completed</h1>
         </div>
 
         <div>

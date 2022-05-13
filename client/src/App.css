@@ -220,17 +220,17 @@
 
 .user-card {
   display: flex;
-  max-width: 24rem;
+  max-width: 20rem;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: .2rem;
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .user-card-content {
-  margin-left: 1.5rem;
-  padding-top: 0.5rem;
+  margin-left: .2rem;
+  padding-top: 0.1rem;
 }
 
 .user-card-name {
@@ -242,7 +242,7 @@
 .user-card-title {
   color: #718096;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: .1;
 }
 
 
@@ -251,5 +251,105 @@
 }
 
 .categories {
+
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
   
+}
+
+.categories-styling {
+  color: white;
+}
+
+
+.button-design {
+
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: rgb(60, 66, 87);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  display: inline-block;
+  min-height: 28px;
+  transition: background-color .24s,box-shadow .24s;
+  :hover {
+      box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 3px 9px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+  }
+
+}
+
+.button-design-2 {
+
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  :hover {
+      color: #fff;
+      background-color: #0b5ed7;
+      border-color: #0a58ca;
+  }
+
+}
+
+
+.form-input-style {
+
+  border: 0;
+  outline: 0;
+  color: rgb(60, 66, 87);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 4px 8px;
+  min-height: 28px;
+  vertical-align: middle;
+  transition: background-color .24s,box-shadow .24s;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.24s, 0.24s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+  :focus{
+      box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(58 151 212 / 36%) 0px 0px 0px 4px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+  }
+
+}
+
+
+
+.create-new-project-background {
+  width: 100%;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  :focus{
+      border: 2px solid rgb(124, 138, 255);
+  }
+
+
 }

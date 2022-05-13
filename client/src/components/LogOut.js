@@ -6,7 +6,7 @@ function LogOut({logUserOut}) {
     }
 
     return (
-        <button onClick={logMeOut}> <h6>Logout</h6> </button>
+        <button className="button-design-2" onClick={logMeOut}> <h6>Logout</h6> </button>
     )
 }
 
