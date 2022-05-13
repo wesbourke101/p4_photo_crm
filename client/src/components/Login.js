@@ -33,16 +33,6 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
     
 
   return (
-<<<<<<< HEAD
-    <div className="bg-slate-600" id="pageContainerDiv">
-       <div className="flex-container" id="divSignInForm">
-           <form onSubmit={formSubmit}>
-                <label>User Name:</label>    
-                <input type="text" name="usrName" onChange={changeUsername} value={username} />
-                <label>Password:</label>  
-                <input type="text" name="pasWord" onChange={changePassword} value={password} />
-                <button type="submit">Sign In</button>   
-=======
     <div>
        <div className="logInDiv">
             <span class="dot"></span>
@@ -63,7 +53,6 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                         <tr><td><button onClick={modalPopUp}> Sign Up</button></td></tr>
                     </tbody>
                 </table>  
->>>>>>> wesAfterHours12
             </form>   
             {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
        </div>
