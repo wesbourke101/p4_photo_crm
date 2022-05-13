@@ -18,14 +18,18 @@ function PhotographerHome({currentUserProjects, currentUser, setCurrentProject})
   console.log(currentUser)
   return (
     <div>
-      <div>
-        -----------------------------------------
-        <h2>{currentUser.first_name} {currentUser.last_name}</h2>
-        <text>Photographer</text><br/>
+       <div>
+             
+        </div>
+
+      <div className="user-card">
+      <div className="user-card-content">
+        <h2 className="user-card-name">{currentUser.first_name} {currentUser.last_name}</h2>
+        <text className="user-card-title">Photographer</text><br/>
         <p>Bio:</p>
         <p>{currentUser.bio}</p>
         <a href={currentUser.website}>{currentUser.first_name}'s website</a><br/>
-        -----------------------------------------
+        </div>
       </div>  
       <div>
         {mappedCompleted}
