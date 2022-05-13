@@ -32,19 +32,18 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
             <h1 className="categories-styling">Pending Approval</h1>
         </div>
         
-        <div className="user-card-list-horizontal">
-            <div>
-                {mappedPending}
+        <div className="custom-project-container">
+            <div className="user-card-list-horizontal">
+                    {mappedPending}
             </div>
         </div>
-  
         
         <div className="categories">
             <h1 className="categories-styling">In Progress</h1>
         </div>
 
-        <div className="user-card-list-horizontal">
-            <div>
+        <div className="custom-project-container">
+            <div className="custom-project-card-layout">
                 {mappedInProgress}
             </div>
         </div>
@@ -54,9 +53,12 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
             <h1 className="categories-styling">Completed</h1>
         </div>
 
+        <div className="custom-project-container">
         <div>
             {mappedCompleted}
+        </div>  
         </div>
+
 
         <div className="empty-bottom-div"> </div>
 

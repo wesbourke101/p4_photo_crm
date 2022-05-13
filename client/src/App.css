@@ -29,14 +29,11 @@
 }
 
 .cards {
-  display: grid;
+  flex-direction: row;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 4rem 5vw;
-  padding: 0;
-  list-style-type: none;
-  display: grid;
 }
+
 .project-card {
     display: flex;
     max-width: 24rem;
@@ -212,11 +209,6 @@
   flex-shrink: 0;
 }
 
-.user-card-list-horizontal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .user-card {
   display: flex;
@@ -252,7 +244,7 @@
 
 .categories {
 
-  margin-left: 1.5rem;
+  margin-left: 18rem;
   padding-top: 0.5rem;
   
 }
@@ -263,7 +255,7 @@
 
 
 .button-design {
-
+  margin-top: 1rem;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -284,7 +276,30 @@
 }
 
 .button-design-2 {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  :hover {
+      color: #fff;
+      background-color: #0b5ed7;
+      border-color: #0a58ca;
+  }
 
+}
+
+.button-design-2-form {
+  margin-top: 1rem;
   cursor: pointer;
   outline: 0;
   color: #fff;
@@ -352,4 +367,65 @@
   }
 
 
+}
+
+.custom-container {
+  display: flex;
+}
+
+.custom-new-proj {
+  max-width: 20rem;
+  margin: 0 auto;
+  padding: 2.5rem;
+
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.custom-container-full-proj {
+  display: flex;
+  margin: 0 auto;
+  padding: 2.5rem;
+  justify-content: center;
+
+}
+
+.full-proj-nav-custom-card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  min-height: 250px;
+}
+
+
+.button-layout-new-proj{
+  justify-content: flex-start;
+  flex-flow: column wrap;
+  row-gap: 10px;
+
+}
+
+
+.custom-project-container {
+  max-width: 20rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+.custom-project-card-layout {
+  order: 5;
+  flex-direction: row;
+  align-self: flex-start;
 }
