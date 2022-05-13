@@ -16,6 +16,10 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
     return (
      <div>
 
+         <div>
+             
+         </div>
+
         <div className="user-card">
             <div className="user-card-image-wrapper">
             <img className="user-card-image" src={currentUser.profile_picture}></img>
@@ -58,10 +62,6 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
             {mappedCompleted}
         </div>  
         </div>
-
-
-        <div className="empty-bottom-div"> </div>
-
         
      </div>
     )
