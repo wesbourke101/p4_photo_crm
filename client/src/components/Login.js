@@ -39,7 +39,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
     
 
   return (
-    <div className="flex-container" id="pageContainerDiv">
+    <div className="bg-slate-600" id="pageContainerDiv">
        <div className="flex-container" id="divSignInForm">
            <form onSubmit={formSubmit}>
                 <label>User Name:</label>    

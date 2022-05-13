@@ -1,121 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-#divSignInForm { 
-    padding: 12px 20px;
-    height: 20rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  } 
-  
-  input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }  
+.container {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
-  #clientNameCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px;
+}
 
-  #pendingApprovalCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+.card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
 
-  #inProgressCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #completedCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #classicCards {
-    padding: 12px 20px;
-    height: auto;
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    /* display: block; */
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #classicCards label {
-    display: block
-  }
-
-  #headerDiv {
-    height: 5rem;
-    width: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5 );
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+}
+.project-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 4px;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
+
+.project-title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #333333;
+}
+
+.card-status {
+  font-size: .8em;
+  color: #333333;
+}
+
+.card-description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #333333;
+  font-family: "MockFlowFont";   
+  display: inline;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}    
+
+.card__tagline {
+  display: inline;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #333333;  
+}
+
+
+

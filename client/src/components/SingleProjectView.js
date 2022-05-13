@@ -14,15 +14,16 @@ function SingleProjectView({ setCurrentProject, project, handleClick}) {
 
   return (
     <div>
-        <div className="team-members">
+        <div className="cards">
 
         </div>
-        <div className="project" onClick={handleClick}>
-            <h1>{project.title}</h1>
-            <h4>{project.status}</h4>
-            <p>{project.description}</p>
-            <p>{project.due_date}</p>
-            <p>{project.moodboard}</p>
+
+        <div className="card-body card" onClick={handleClick}>
+            <h1 className="card-title">{project.title}</h1>
+            <h4 className="card-status">Status: {project.status}</h4>
+            <p className="card-status">Description: {project.description}</p>
+            <p className="card-status">{project.due_date}</p>
+            <p className="card__tagline">{project.moodboard}</p>
         </div>
     </div>
   )

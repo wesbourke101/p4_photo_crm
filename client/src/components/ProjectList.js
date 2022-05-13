@@ -14,8 +14,8 @@ function ProjectList({currentUserProjects, currentUser, setCurrentProject}) {
     ////////////////////////////////////////////////////////////////////////
 
     return (
-     <div>
-        <div>
+     <div className="bg-slate-500">
+        <div className="bg-slate-500">
             {currentUser.first_name}
             {currentUser.last_name}
         </div>
