@@ -53,17 +53,18 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                         <tr></tr>
                     </tbody>        
                 </table>  
+            </form>     
                 <br/><br/>
+
                 <table>
                     <tbody>
                         <tr><td><text>Don't have an account? Sign up!</text></td></tr>
                         <tr><td><button onClick={modalPopUp}> Sign Up</button></td></tr>
                     </tbody>
                 </table>  
-            </form>   
-            {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
+              
        </div>
-       
+            {toggleModal ? <Modal setToggleModal={setToggleModal} postNewUser={postNewUser}/> : null}
     </div>
   )
 }

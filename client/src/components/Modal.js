@@ -22,6 +22,7 @@ function Modal({setToggleModal, postNewUser}) {
     }
 
   return (
+      <div className="logInDiv"> 
     <div className='modal'>
         <div className='modal_content'>
             <div className='modal_header'>
@@ -49,6 +50,7 @@ function Modal({setToggleModal, postNewUser}) {
                 </form>
             </div>
         </div>
+    </div>
     </div>
   )
 }
