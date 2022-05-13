@@ -49,7 +49,7 @@ function Login({ loginFunction, setCurrentUser, postNewUser}) {
                     <tbody>
                         <tr><td><label>User Name:</label> </td><td><input id="inputStyle" type="text" name="usrName" onChange={changeUsername} value={username} /></td></tr>
                         <tr><td><label>Password:</label>  </td><td><input id="inputStyle" type="text" name="pasWord" onChange={changePassword} value={password} /></td></tr>
-                        <tr><td><button classname="button-design-2" type="submit">Sign In</button> </td></tr>
+                        <tr><td><button className="button-design-2" type="submit">Sign In</button> </td></tr>
                         <tr></tr>
                     </tbody>        
                 </table>  
