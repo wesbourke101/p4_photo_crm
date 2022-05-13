@@ -1,121 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-#divSignInForm { 
-    padding: 12px 20px;
-    height: 20rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  body {
+    background-image: linear-gradient(to right, #76b5c5, #1e81b0, #154c79);
   }
 
-  input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  } 
-  
-  input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }  
-
-  #clientNameCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  .logInDiv {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 15rem;
+    height: 15rem;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   }
 
-  #pendingApprovalCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #inProgressCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #completedCardDiv { 
-    padding: 12px 20px;
-    height: 10rem;
-    width: 20rem;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  #classicCards {
-    padding: 12px 20px;
-    height: auto;
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    /* display: block; */
+  .dot {
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to right, #76b5c5, #1e81b0, #154c79);
+    border-radius: 50%;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    margin-left: 50%;
+    transform: translate(-50%);
   }
 
-  #classicCards label {
-    display: block
+  table { 
+    border-collapse:collapse;
+    border-style : hidden!important;
+    border:none; 
+    
   }
 
-  #headerDiv {
-    height: 5rem;
-    width: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  td {
+    border: none;
+    padding: .2rem;
   }
 
-  .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5 );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 4px;
-  }
+
+

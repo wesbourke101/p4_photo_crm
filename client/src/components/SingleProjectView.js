@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 
 function SingleProjectView({ setCurrentProject, project, handleClick}) {
-
   let navigate = useNavigate()
 
   function handleClick() {
@@ -17,7 +16,7 @@ function SingleProjectView({ setCurrentProject, project, handleClick}) {
         <div className="team-members">
 
         </div>
-        <div className="project" onClick={handleClick}>
+        <div className="grid grid-rows-4 grid-flow-col gap-4" onClick={handleClick}>
             <h1>{project.title}</h1>
             <h4>{project.status}</h4>
             <p>{project.description}</p>
